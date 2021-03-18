@@ -1,0 +1,70 @@
+{% extends 'layout.html'%}
+
+{% block title %} 
+PhishDetect
+{% endblock title %}
+
+
+{% block body %}
+
+<header class=" d-flex justify-content-center">
+<div class=" logo ">
+	<img id="fix"  src="{{url_for('static', filename='img/pd.png') }}" alt="phish detect logo" >
+</div>  
+</header>         
+
+
+
+
+ <div class="container-lg bg-dark text-white  p-2 mx-auto rounded">
+	 	<table class="table  table-bordered  bg-light  " id="dataTable">
+			  <thead class="thead bg-info">
+			    <tr>
+			      <th scope="col">S.NO</th>
+			      <th scope="col">URL</th>
+			      <th scope="col">Status</th>
+			      <<th scope="col">Edit</th>
+			      <th scope="col">Delete</th>
+			      
+			    </tr>
+			  </thead>
+
+			  <tbody>
+			  	{% for site in sites %}
+			     <tr>
+			     <td>{{site.id}}</td>	
+                <td>{{site.url}}</td>
+                <td>{{site.status}}</td>
+                <td><button>Edit</button></td>
+                <td><button>Delete</button></td>
+              
+            </tr>
+        {% endfor %}
+			    
+			  </tbody>
+			  <tfoot>
+			    
+				
+		</tfoot>
+		  
+</table>
+
+</div>
+
+	
+</div>
+
+
+
+		<footer class="mt-5">
+		<div class="card-footer bg-dark text-center text-white">
+  <h2> &copy;Copyright PhishDetect</h2>
+  </div>
+</div>
+
+</footer>
+	 		
+	 	
+	
+
+{% endblock body %}

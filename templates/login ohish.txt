@@ -1,0 +1,24 @@
+@app.route("/login" , methods=['GET' ,'POST'])
+def login(sites=None):
+
+    if ('user' in session and  session ['user'] == ['sac123']):
+        sites= sites.query.all()
+        return render_template("dashboard.html", sites=sites)
+
+    if request.method == 'POST':
+        username=request.form.get('uname')
+        userpassd=request.form.get('pass')
+        if username == ["sac123"] and userpassd == ["sac123"]:
+            session['user'] = username
+
+            sites= sites.query.all()
+            return  render_template("dashboard.html", sites=sites)
+
+    return render_template("login.html")
+
+
+@app.route("/dashboard")
+@login_required
+def dashboard():
+    return render_template("dashboard.html")
+

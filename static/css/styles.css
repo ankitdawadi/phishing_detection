@@ -1,0 +1,74 @@
+
+/* .logo {
+
+	
+	padding-top: 170px;
+	padding-left: 550px;
+	
+} */
+.container-lg {
+	
+
+
+}
+
+
+.table{
+
+	width: 100%;
+
+}
+.card-img{
+	width: 400px;
+	height: 200px;
+	}
+
+.card-footer{
+	width: 100%;
+	margin-top: 5px;
+}
+
+
+ .form-row input{
+	width:500px;
+	height: 50px; 
+}
+/* .col-sm-4
+{
+	height: 500px;
+} */
+
+
+
+img{
+	width: 400px;
+	height: 150px;
+	
+	}
+
+
+
+}
+header{
+
+	margin: 0px;
+	padding: 0px;
+	width: 100%
+}
+body{
+	background-image: url(../img/back2.jpg);
+	background-size: cover;
+	margin: 0px;
+
+
+
+}
+/* section {
+	margin: 20px;
+
+} */
+footer
+{
+
+}
+

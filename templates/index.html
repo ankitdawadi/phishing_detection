@@ -1,0 +1,114 @@
+{% extends 'layout.html'%}
+
+{% block title %} 
+PhishDetect
+{% endblock title %}
+
+
+{% block body %}
+
+<header class=" d-flex justify-content-center">
+<div class=" logo ">
+	<img id="fix"  src="{{url_for('static', filename='img/pd.png') }}" alt="phish detect logo" >
+</div>  
+</header>         
+
+<div class="justify-content-center " >
+			<form  method="post" action="{{url_for('getURL')}}" >
+				<div class="form-row justify-content-center m-lg-5 ">
+					
+					  <input type="text" class="form-control" id="url" name="url" 
+					  value="{{request.form.url}}" placeholder="Enter Url...">
+					
+					
+					  <button type="submit" vlaue="Check" class="btn-lg btn-primary ">Check</button>
+					
+					
+			</div>
+			<div class=" d-flex justify-content-center ">
+				 {{ prediction_text }}
+			   <!-- {% if error %} 
+			      {% if error == 'legit'%}
+			      <p style="color: green;">
+					<strong>{{error}}</strong>
+		  </p> {% else %}
+				 <p style="color: red;">
+					<strong>{{error}}</strong>
+						</p> {% endif %} {% endif %} -->
+			</div>
+		</form>
+
+		
+
+
+ <div class="container-lg bg-dark text-white  p-2 mx-auto rounded">
+	 	<table class="table  table-bordered  bg-light  " id="dataTable">
+			  <thead class="thead bg-info">
+			    <tr>
+			      <th scope="col">ID</th>
+			      <th scope="col">URL</th>
+			      
+			      
+			    </tr>
+			  </thead>
+
+			  <tbody>
+			  	{% for site in sites %}
+			     <tr>
+			     <td>{{site.id}}</td>	
+                <td>{{site.url}}</td>
+                
+              
+            </tr>
+        {% endfor %}
+			    
+			  </tbody>
+			  <tfoot>
+			    
+				
+		</tfoot>
+		  
+</table>
+
+</div>
+
+	
+</div>
+
+
+<section class="mt-lg-5">
+		<div class="row d-flex justify-content-center">
+		  <div class="col-sm-4 mr-4 pr-3">
+		    <div class="card bg-light text-dark">
+				  <img src="{{url_for('static', filename='img/wp1.jpg') }} " class="card-img" alt="..." >
+				  <div class="card-img-overlay text-right ">
+				   
+				   
+		        <a href="/phishing" class="btn btn-primary ">Click for more </a>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-4 pr-3">
+		    <div class="card bg-light text-dark">
+				  <img src="{{url_for('static', filename='img/about1.png') }}" class="card-img" alt="...">
+				  <div class="card-img-overlay text-right ">
+				    
+		        <a href="/about" class="btn btn-primary">Click for more </a>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+</section>
+
+		<footer class="mt-5">
+		<div class="card-footer bg-dark text-center text-white">
+  <h2> &copy;Copyright PhishDetect</h2>
+  </div>
+</div>
+
+</footer>
+	 		
+	 	
+	
+
+{% endblock body %}
